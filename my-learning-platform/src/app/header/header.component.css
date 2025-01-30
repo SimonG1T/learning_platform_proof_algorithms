@@ -1,0 +1,29 @@
+
+.navbar {
+    position: sticky;
+    top: 0;
+    padding: 10px;
+    z-index: 1000;
+}
+
+a.disabled {
+    pointer-events: none;
+    color: grey;
+    background-color: salmon;
+    text-decoration: none;
+    display: none;
+}
+
+#header-link-home:hover {
+    text-decoration: underline;
+    background-color: skyblue;
+}
+
+.highlight-header {
+    font-weight: bold;
+}
+
+li:hover {
+    text-decoration: underline;
+    background-color: skyblue;
+}

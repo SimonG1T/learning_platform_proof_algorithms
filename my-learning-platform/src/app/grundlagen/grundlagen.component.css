@@ -1,0 +1,45 @@
+/* collapsable-containers */
+.container {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 100%;
+    overflow: auto; /* scrollable if needed */
+    max-width: 1000px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+.rules {
+    border: 5px solid darkgreen;
+    margin: 1%;
+    padding: 1%;
+    background-color: lightgreen;
+    /* float: right; */
+}
+.example {
+    border: 5px solid darkgreen;
+    margin: 1%;
+    padding: 1%;
+    background-color: lightgreen;
+}
+app-latex-paragraph {
+    color: black;
+    font-size: 2em;
+}
+.example > app-latex-paragraph {
+    /* font-family: "Times New Roman", Times, serif; */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+}
+
+.toggle {
+    cursor: pointer;
+    margin: 0;
+    color: #555;
+}
+
+.content {
+    padding-top: 10px;
+}

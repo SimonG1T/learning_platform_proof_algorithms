@@ -1,0 +1,36 @@
+
+<h2>{{ name }}</h2>
+<div class="container">
+    <p>
+        Das DPLL-Verfahren verwendet die <b>Mengenschreibweise</b> als einfachere Darstellung der <b>KNF</b>.<br>
+        Nach und nach wird immer ein Literal auf alle anderen Klauseln angewendet.
+    </p>
+
+    <p>Der DPLL-Graph wird nach und nach sequentiell, durch das drücken von "Next" erzeugt.</p>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <form (ngSubmit)="onNext()">
+                <p>
+                    Weiteres Beispiel:
+                    <a (click)="updateParagraph()">{{ formula }}</a>
+                </p>
+
+                <div class="information">
+                    <app-latex-paragraph #latexParagraph [inputString]="formula"></app-latex-paragraph>
+                    <button class="btn btn-success" id="next-button" type="submit" #f="">{{isLast ? 'Rerun' : 'Next'}}</button>
+                </div>
+            
+                <div class="flex-container">
+                    <div class="explanation">
+                        <p id="dpll-example-explanation"></p>
+                    </div>
+                
+                    <div class="graph">
+                        <div class="container" id="dpll-tree"></div>
+                    </div>
+                </div> 
+            </form>
+        </div>
+    </div>
+</div>

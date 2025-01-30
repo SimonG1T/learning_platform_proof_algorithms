@@ -1,0 +1,70 @@
+
+<h2>Teste das Tableauverfahren</h2>
+
+<div class="container">
+    <p>
+        Das Tableauverfahren generiert mithilfe von Formeln einen Baum.<br>
+        Dies geschieht so lange, bis alle Knoten verwendet wurden.
+    </p>
+    <section>
+        <h4>Mögliche Eingabe:</h4>
+        <ul>
+            <li>Variablen als einzelne Klein- oder Großbuchstaben: A,B,C a,b,c</li>
+            <li>Klammern werden als begrenzer verwendet: '(' ')'</li>
+            <li>Logische Zeichen werden wie folgt ausgewählt:
+                <ul>
+                    <li>NOT: als '!'</li>
+                    <li>AND: als '&'</li>
+                    <li>OR:  als '|'</li>
+                    <li>Implication: als '->'</li>
+                    <li>Equivalence: als '<->'</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div class="row">
+                    <div class="col-sm-5 form-group">
+                        <h4>Mögliche Tests zur Schnellauswahl:</h4>
+                        <ul>
+                            <li><a id="my-link-1" (click)="onLink($event, f)" href="javascript:void(0);" #f="">(A|B)&(!A|C)&(!B)</a></li>
+                            <li><a id="my-link-2" (click)="onLink($event, f)" href="javascript:void(0);" #f="">(A|B)&(!A|B)&(A|!B)</a></li>
+                            <li><a id="my-link-3" (click)="onLink($event, f)" href="javascript:void(0);" #f="">(!(!(A|B)|A))</a></li>
+                            <li><a id="my-link-4" (click)="onLink($event, f)" href="javascript:void(0);" #f="">(!(!(A&B)&A))</a></li>
+                        </ul>
+
+                        <label for="formula">Gib eine Formel ein:</label>
+                        <input
+                            type="text"
+                            id="formula"
+                            class="form-control"
+                            name="formula"
+                            ngModel
+                            required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <button
+                            class="btn btn-success"
+                            type="sumit" [disabled]="!f.valid">{{ editMode ? 'Update' : 'Add'}}
+                        </button>
+                        <button class="btn btn-primary" type="button" (click)="onClear(f)" #f="">Clear</button>
+                    </div>
+                </div>
+
+                <app-display-feedback></app-display-feedback>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div id="tableau-tree"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

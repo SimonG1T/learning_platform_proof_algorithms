@@ -1,0 +1,74 @@
+<h2>Teste das DPLL-Verfahren</h2>
+
+<div class="container">
+    <h3>Lass es generieren.</h3>
+    <p>
+        Das DPLL-Verfahren verwendet die <b>Mengenschreibweise</b> als einfachere Darstellung der <b>KNF</b>.<br>
+        Nach und nach wird immer ein Literal auf alle anderen Klauseln angewendet.
+    </p>
+    <section>
+        <h4>Eingabe in konjunktiver Normalform (KNF):</h4>
+        <ul>
+            <li>Bei einer <b>KNF</b> handelt es sich um eine Konjunktion (UND-Verknüpfung) von Disjunktionen (ODER-Verknüpfungen) von Literalen (Variablen oder deren Negationen)</li>
+            <li>Variablen als einzelne Klein- oder Großbuchstaben: A,B,C a,b,c</li>
+            <li>Klammern werden als begrenzer verwendet: '(' ')'</li>
+            <li>Logische Zeichen werden wie folgt ausgewählt:
+                <ul>
+                    <li>NOT: als '!'</li>
+                    <li>AND: als '&'</li>
+                    <li>OR:  als '|'</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+
+    <div class="row">
+        <div class="col-xs-12">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div class="row">
+                    <div class="col-sm-5 form-group">
+                        <h4>Mögliche Tests zur Schnellauswahl:</h4>
+                        <ul>
+                            <li><a id="my-link-1" (click)="onLink($event, f)" href="javascript:void(0);" #f="">(A|B) & (!A|C) & (!B)</a></li>
+                            <li><a id="my-link-2" (click)="onLink($event, f)" href="javascript:void(0);" #f="">(A|B) & (!A|B) & (A|!B)</a></li>
+                            <li><a id="my-link-3" (click)="onLink($event, f)" href="javascript:void(0);" #f="">(A|B|C) & (!B|C) & (A|!C)</a></li>
+                        </ul>
+
+                        <h5>Mögliche Formel zur Umwandlung in KNF:</h5>
+                        <ul>
+                            <li><a id="my-link-c1" (click)="onLink($event, f)" href="javascript:void(0);" #f="">(A->B)&(!C|(D<->E))</a></li>
+                        </ul>
+
+                        <label for="formula">Gib eine Formel in KNF ein:</label>
+                        <input
+                            type="text"
+                            id="formula"
+                            class="form-control"
+                            name="formula"
+                            ngModel
+                            required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <button
+                            class="btn btn-success"
+                            type="sumit" [disabled]="!f.valid">{{ editMode ? 'Update' : 'Add'}}
+                        </button>
+                        <button class="btn btn-primary" type="button" (click)="onTranslate(f)" #f="">Translate to KNF</button>
+                        <button class="btn btn-primary" type="button" (click)="onClear(f)" #f="">Clear</button>
+                    </div>
+                </div>
+
+                <app-display-feedback></app-display-feedback>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div id="dpll-tree"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

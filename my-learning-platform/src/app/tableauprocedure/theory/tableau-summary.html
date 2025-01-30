@@ -1,0 +1,44 @@
+<h2>Das Tableauverfahren</h2>
+
+<p>
+    Das <b>Tableauverfahren</b> ist eine systematische Methode zur Entscheidungsfindung in der Logik, insbesondere in der Aussagenlogik und der Prädikatenlogik. Es wird häufig in der mathematischen Logik und der theoretischen Informatik verwendet, um die Gültigkeit von Aussagen oder Formeln zu überprüfen. Hier ist eine kurze Übersicht über das Verfahren:
+</p>
+
+<ul class="list-unstyled">
+    <li><h4>Prinzipien des Tableauverfahrens</h4>
+        <ol>
+            <li>
+                Ziel: Das Tableauverfahren versucht zu zeigen, ob eine gegebene Formel erfüllbar ist oder nicht. Es zerlegt die Formel in einfachere Komponenten, bis eine offensichtliche Widersprüchlichkeit (Kontradiktion) oder Erfüllbarkeit gefunden wird.
+            </li>
+            <li>
+                Tabellenstruktur: Das Verfahren verwendet eine Baumstruktur (Tableau), wobei jeder Knoten eine logische Formel darstellt. Die Wurzel des Baums ist die ursprüngliche Formel, und die Zweige repräsentieren mögliche Erfüllbarkeiten der Teilformeln.
+            </li>
+            <li>
+                Regeln: Es gibt spezifische Regeln, wie die Formeln aufgeteilt werden, abhängig von den logischen Operatoren (z. B. UND, ODER, NICHT).
+            </li>
+        </ol>
+    </li>
+    <li><h4>Schritte des Tableauverfahrens</h4>
+        <ol>
+            <li>
+                Start: Beginne mit der Negation der Formel, deren Gültigkeit bewiesen werden soll (d. h., man zeigt, dass die Negation nicht erfüllbar ist, um die Gültigkeit der ursprünglichen Formel zu beweisen).
+            </li>
+            <li>
+                Zerlegung: Wende die Zerlegungsregeln an, um komplexe Formeln in einfachere Teilformeln zu zerlegen. Dies wird rekursiv für alle Teilformeln wiederholt.
+            </li>
+            <li>
+                Verzweigung: Für jede Zerlegung werden neue Zweige im Tableau erstellt. Dies repräsentiert unterschiedliche mögliche Erfüllungen der Formel.
+            </li>
+            <li>
+                Abschluss: Das Verfahren wird fortgesetzt, bis jeder Zweig entweder eine Kontradiktion enthält (und somit geschlossen ist) oder eine erfüllbare Belegung gefunden wird.
+            </li>
+            <li>
+                Ergebnis: Wenn alle Zweige geschlossen sind, ist die ursprüngliche Formel gültig. Wenn mindestens ein Zweig offen bleibt, ist die ursprüngliche Formel nicht gültig.
+            </li>
+        </ol>
+    </li>
+</ul>
+
+<div><a routerLink="/tableau-example">Beispiel für das Tableauverfahren</a></div>
+<div><a routerLink="/tableau-test">Test für das Verfahren</a></div>
+<div><a routerLink="/tableau-exercise">Übung zu Verfahren</a></div>

@@ -1,0 +1,28 @@
+
+<div class="container">
+
+    <div class="grammatiken" (click)="toggleCollapse(1)">
+        <h3 class="toggle" *ngIf="grammatikenIsCollapsed">{{ collapsedGrammatikenLabel }}</h3>
+        <div *ngIf="!grammatikenIsCollapsed" class="content">
+            <grundlagen-grammatiken></grundlagen-grammatiken>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="beweise" (click)="toggleCollapse(2)">
+        <h3 class="toggle" *ngIf="beweiseIsCollapsed">{{ collapsedBeweiseLabel }}</h3>
+        <div *ngIf="!beweiseIsCollapsed" class="content">
+            <grundlagen-beweise></grundlagen-beweise>
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="schlussregeln" (click)="toggleCollapse(3)">
+        <h3 class="toggle" *ngIf="schlussregelnIsCollapsed">{{ collapsedSchlussregelnLabel }}</h3>
+        <div *ngIf="!schlussregelnIsCollapsed" class="content">
+            <grundlagen-schlussregeln></grundlagen-schlussregeln>
+        </div>
+    </div>
+</div>

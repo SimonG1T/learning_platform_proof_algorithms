@@ -1,0 +1,114 @@
+
+<h2>{{ name }}</h2>
+
+<div class="container">
+    <div class="information">
+        <!-- Buttons changes the page content -->
+        <button class="button btn btn-success" type="button" (click)="onSwitch()">{{isLast ? 'Rerun' : 'Next'}}</button>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="dynamic-content">
+                <div *ngIf="currentContent === 'content1'">
+                    <h3>Überblick zum DPLL-Verfahren</h3>
+                    <p>
+                        Das <b>D</b>avis-<b>P</b>utnam-<b>L</b>ogemann-<b>L</b>oveland-Verfahren ist ein Algorithmus zur Überprüfung der Erfüllbarkeit von Aussagenlogik-Formeln.<br>
+                        Es ist eine Weiterentwicklung des ursprünglichen Davis-Putnam-Algorithmus und bildet die Grundlage für vielde moderne SAT-Solver (Satisfiability-Solver).
+                    </p>
+                    <p>
+                        Das DPLL-Verfahren entscheidet, ob eine gegebene Menge von Klauseln erfüllbar ist (SAT-Problem), indem es systematisch mögliche Zuweisungen für die Variablen der Formel untersucht.
+                </div>
+
+                <div *ngIf="currentContent === 'content2'">
+                    <h3>Voraussetzung</h3>
+                    <p>
+                        Das DPLL-Verfahren setzt die <b>Konjunktive Normalform (KNF)</b> voraus.<br>
+                        Eine <b>KNF</b> ist eine Konjunktion von Disjunktionen von Literalen.<br>
+                        Diese wird der Einfachheit in Mengenschreibweise umgeformt:
+                    </p>
+                    <ul>
+                        <li>Die Konjunktion wird von Klammern <b>'&#123;'</b>,<b>'&#125;'</b> umschlossen.</li>
+                        <li>Die einzelnen Disjunktionen sind in Klammern <b>'&#123;'</b>,<b>'&#125;'</b> eingeschlossen und werden mit Semikolons <b>';'</b> voneinander getrennt.</li>
+                        <li>Die einzelnen Literale werden mit einem Komma <b>','</b> voneinander getrennt.</li>
+                    </ul>
+                </div>
+
+                <div *ngIf="currentContent === 'content3'">
+                    <h3>Reduzierte Klauselmenge</h3>
+                    <p>
+                        Sei F eine Klauselmenge von Klauseln, L ein Literal.
+                    </p>
+                    <ol>Die um L reduzierte Klauselmenge F_L entsteht aus F durch
+                        <li>Streichen aller Klauseln, die L enthalten,</li>
+                        <li>Streichen des Kompliments von L aus verbleibenden Klauseln.</li>
+                    </ol>
+
+                    <div class="code-container">
+                        <div id="resolution-rule" class="code-space">
+                            <span class="line"><span class="line-number">1</span>{{ lineF }}</span>
+                            Reduzieren um A:
+                            <span class="line"><span class="line-number">2</span>{{ lineFA }}</span>
+                            Reduzieren um !B:
+                            <span class="line"><span class="line-number">3</span>{{ lineFB }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="currentContent === 'content4'">
+                    <h3>Vorgehen des Verfahrens</h3>
+                    <p>
+                        Das DPLL-Verfahren arbeitet rekursiv und umfasst die folgenden Schritte:
+                    </p>
+                    <ol>
+                        <li><b>Liegt Formel in KNF vor</b><br>
+                            Falls die gegebene Formel nicht bereits in KNF vorliegt, wird sie in KNF transformiert.
+                        </li>
+                        <li><b>Basisfall:</b>
+                            <ul>
+                                <li>Wenn die Klauselmenge leer ist, ist die Formel erfüllbar (SAT).</li>
+                                <li>Wenn eine leere Klausel (eine Klausel, die nicht erfüllbar ist) enthalten ist, ist die Formel erfüllbar (UNSAT).</li>
+                            </ul>
+                        </li>
+                        <li><b>Einheitsregel (Unit Propagation):</b>
+                            <ul>
+                                <li>Wenn eine Klausel nur ein Literal enthält (z.B. A), muss dieses Literal wahr sein, damit die Klaues erfüllt ist.</li>
+                                <li>Die Formel wird entwprechend vereinfacht:
+                                    <ul>
+                                        <li>Alle Klauseln, die das Literal enthalten, werden entfernt.</li>
+                                        <li>Aus allen Klausel, in denen das Literal negiert ist (z.B. !A), wird !A entfernt.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><b>Pure-Literal-Regel:</b>
+                            <p>
+                                Wenn ein Literal nur in positiver oder nur in negativer Form vorkommt, kann es so zugewiesen werden, dass es wahr ist. Das Literal wird aus der Formel entfernt, und die Formel wird entsprchend vereinfacht.
+                            </p>
+                        </li>
+                        <li><b>Fallunterscheidung (Splitting):</b>
+                            <ul>
+                                <li>Es wird eine Variable x ausgefählt, und der Algorithmus verzweigt in zwei Fälle:
+                                    <ul>
+                                        <li>Fall 1: x ist wahr</li>
+                                        <li>Fall 2: x ist falsch</li>
+                                    </ul>
+                                </li>
+                                <li>Beide Zweige werden rekursiv untersucht.</li>
+                            </ul>
+                        </li>
+                        <li><b>Backtracking:</b>
+                            <p>
+                                Wenn sich ein Zweig als unerfüllbar herausstellt, wird zum vorherigen Punkt zurückgekehrt, und die Alternative wird untersucht.
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+
+                <div *ngIf="currentContent === 'content5'">
+                    <app-dpll-summary></app-dpll-summary>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

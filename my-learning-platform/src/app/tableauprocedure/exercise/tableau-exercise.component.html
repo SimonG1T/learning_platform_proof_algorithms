@@ -1,0 +1,78 @@
+<h2>{{ name }}</h2>
+
+<div class="container">
+    <p>
+        Das Tableauverfahren verwendet eine einfache logische Darstellung der Formeln.<br>
+        Nach und nach werden immer eine Regel auf eine Klausel angewendet.
+        Pro Klausel kann immer nur eine Formel angewendet werden.
+    </p>
+    <section>
+        <h4>Eingabe in logischen Formeln:</h4>
+        <ul>
+            <li>Variablen als einzelne Klein- oder Großbuchstaben: A,B,C a,b,c</li>
+            <li>Klammern werden als begrenzer verwendet: '(' ')'</li>
+            <li>Logische Zeichen werden wie folgt ausgewählt:
+                <ul>
+                    <li>NOT: als '!'</li>
+                    <li>AND: als '&'</li>
+                    <li>OR:  als '|'</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+
+    
+    <div class="row">
+        <div class="col-xs-12">
+            <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+                <div class="row">
+                        <h4>Mögliche Übungen:</h4>
+                        <ul>
+                            <li><a id="my-link-1" (click)="onLink($event, f)" href="javascript:void(0);" #f="">(A|B)&(!A|C)&(!B)</a></li>
+                            <li><a id="my-link-2" (click)="onLink($event, f)" href="javascript:void(0);" #f="">(A|B)&(!A|B)&(A|!B)</a></li>
+                        </ul>
+
+                    <div class="col-sm-5 form-group">
+                        <label for="formula" class="left">Gib eine Formel ein:</label>
+                        <div class="col-sm-9 form-group">
+                            <label id="myChildLabel" style="display: none;" for="formula">
+                                Gib eine Formel ein, um ein Kind eines zuvor ausgewählten Elements hinzuzufüen:
+                                <ul>
+                                    <li>Für Regelanwendung eines AND, vertikale Aufteilung des Parents: &&</li>
+                                    <li>Für Regelanwendung eines OR, horizontale Aufteilung des Parents: ||</li>
+                                </ul>
+                            </label>
+                        </div>
+                        <input
+                            type="text" id="formula" class="form-control" name="formula"
+                            ngModel required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <button
+                            class="btn btn-success"
+                            type="sumit" [disabled]="!f.valid">{{ editMode ? 'Update' : 'Add'}}
+                        </button>
+                        <button class="btn btn-primary" type="button" (click)="onClear(f)" #f="">Clear</button>
+                    </div>
+                    <div class="col-xs-12">
+                        <button
+                            id="myChildButton" class="btn btn-primary" type="button"
+                            style="display: none;" (click)="onAddChild(f)" #f="" [disabled]="!f.valid">
+                            Add Child
+                        </button>
+                    </div>
+                </div>
+
+                <app-display-feedback></app-display-feedback>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div id="tableau-tree"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

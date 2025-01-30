@@ -1,0 +1,41 @@
+
+.container {
+    border: 1px solid grey;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: auto;
+    max-width: 1000px;
+    align-self: center;
+}
+
+.information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    margin-left: auto;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.rule-container {
+    display: flex;
+    justify-content: center;
+}
+
+.rules {
+    font-family: monospace;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+app-latex-paragraph {
+    color: black;
+    font-size: 2em;
+}

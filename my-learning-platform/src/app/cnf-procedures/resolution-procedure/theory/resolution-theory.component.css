@@ -1,0 +1,49 @@
+
+.container {
+    border: 1px solid grey;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: auto;
+    max-width: 1000px;
+    align-self: center;
+}
+
+.information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    margin-left: auto;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.code-container {
+    display: flex;
+    justify-content: center;
+}
+
+.code-space {
+    font-family: monospace;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    overflow-x: auto;
+}
+
+.line {
+    display: block;
+}
+
+.line-number {
+    display: inline-block;
+    width: 2em;
+    text-align: right;
+    margin-right: 1em;
+    color: #888;
+}

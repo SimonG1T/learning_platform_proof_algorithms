@@ -1,0 +1,60 @@
+
+<h2>Schlussregeln & Wichtige Prinzipien</h2>
+<ol class="list-unstyled">
+
+    <p>Der Modus Tollens und der Modus Ponens sind zwei grundlegende Schlussregeln der formalen Logik, die in der Aussagenlogik verwendet werden, um gültige Schlussfolgerungen zu ziehen. Beide basieren auf der Implikation.</p>
+    <ul>
+        <li>Anteced: die Bedingung</li>
+        <li>Konsequent: die Folge</li>
+    </ul>
+
+    <li><h4>Modus Tollens</h4>
+        <ul>
+            <p>
+                Der Modus Tollens erlaubt es, aus einer Implikation und der Falschheit des Konsequenten auf die Falschheit des Antecedens zu schließen.
+            </p>
+
+            <div class="flex-container">
+                <div class="rules">
+                    <app-latex-paragraph [inputString]="schemeModusTollens"></app-latex-paragraph>
+                </div>
+                
+                <div class="example">
+                    <app-latex-paragraph [inputString]="exampleModusTollens"></app-latex-paragraph>
+                </div>
+            </div>
+        </ul>
+    </li>
+
+    <li><h4>Modus Ponens</h4>
+        <ul>
+            <p>Der Modus Ponens erlaubt es, aus einer Implikation und der Gültigkeit des Antecedens auf die Gültigkeit des Konsequenten zu schließen.</p>
+
+            <div class="flex-container">
+                <div class="rules">
+                    <app-latex-paragraph [inputString]="schemeModusPonens"></app-latex-paragraph>
+                </div>
+                
+                <div class="example">
+                    <app-latex-paragraph [inputString]="exampleModusPonens"></app-latex-paragraph>
+                </div>
+            </div>
+        </ul>
+    </li>
+
+    <li><h4>Wichtige Prinzipien</h4>
+        <ul>
+            <li><b>Das Gesetz der doppelten Negation:</b><br>
+                <span id="double-negation"></span>
+            </li>
+            <li><b>De Morgansche Gesetze:</b><br>
+                <span id="de-morgan-and"></span><br>
+                <span id="de-morgan-or"></span>
+            </li>
+            <li><b>Indempotenzgesetze:</b><br>
+                <span id="indem-and"></span><br>
+                <span id="indem-or"></span>
+            </li>
+        </ul>
+    </li>
+</ol>

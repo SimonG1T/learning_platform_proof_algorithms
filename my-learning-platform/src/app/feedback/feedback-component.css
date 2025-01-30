@@ -1,0 +1,15 @@
+
+#feedback-container {
+    margin: 1%;
+    padding: 1%;
+    border: 1px solid blue;
+    width: fit-content;
+}
+
+.error {
+    color: red;
+}
+
+.finished {
+    color: green;
+}

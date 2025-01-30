@@ -1,0 +1,58 @@
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: fit-content;
+    gap: 1em;
+    justify-content: space-between;
+    padding: 1em;
+}
+.flex-container > * {
+    flex-shrink: 1;
+}
+
+.button {
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.information {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+a {
+    cursor: pointer;
+}
+
+.explanation {
+    border: 1px solid darkorange;
+    text-wrap: wrap;
+    min-width: 100px;
+    max-width: 300px;
+    padding: 1em;
+}
+.tree {
+    /* border: 1px solid red; */
+    box-sizing: border-box;
+    flex-basis: 0;
+    max-width: 230px;
+}
+.container {
+    min-width: 230px;
+    max-width: 100%;
+}
+
+.rules {
+    border: 5px solid darkgreen;
+    padding: 1em;
+    background-color: lightgreen;
+    float: right;
+}
+
+app-latex-paragraph {
+    color: black;
+    font-size: 2em;
+}

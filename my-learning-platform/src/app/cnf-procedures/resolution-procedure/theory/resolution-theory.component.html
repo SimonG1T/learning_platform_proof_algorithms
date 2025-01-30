@@ -1,0 +1,98 @@
+
+<h2>{{ name }}</h2>
+
+<div class="container">
+    <div class="information">
+        <!-- Buttons changes the page content -->
+        <button class="button btn btn-success" type="button" (click)="onSwitch()">{{isLast ? 'Rerun' : 'Next'}}</button>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="dynamic-content">
+                <div *ngIf="currentContent === 'content1'">
+                    <h3>Überblick zum Resolutionsverfahren</h3>
+                    <p>
+                        Das Resolutiongsverfahren ist ein algorithmisches Verfahren der formalen Logik, das hauptsächlich in der Aussagen- und Prädikatenlogik verwendet wird.<br>
+                        Es dient dazu, die Unerfüllbarkeit einer Formel in konjunktiver Normalform (KNF) zu beweisen.<br>
+                        Wenn das Verfahren einen Widerspruch (eine leere Klausel) ableiten kann, ist die Formel unerfüllbar.
+                    </p>
+                </div>
+
+                <div *ngIf="currentContent === 'content2'">
+                    <h3>Grundidee des Resolutionsverfahrens</h3>
+                    <p>
+                        Eine Formel ist unerfüllbar, wenn ihre Negation keine Interpretation hat, welche sie wahr macht.<br>
+                        Durch schrittweise resolvieren (Kombinieren von Klauseln) wird überprüft, ob ein Widerspruch (eine leere Klausel) hergeleitet werden kann.<br>
+                        Das Verfahren ist korrekt und vollständig.
+                    </p>
+                    <ul>
+                        <li><b>Korrektheit:</b>
+                            <p>
+                                Wenn eine Formel hergeleitet werden kann, ist die ursprüngliche Formel wirklich unerfüllbar.
+                            </p>
+                        </li>
+                        <li><b>Vollständigkeit:</b>
+                            <p>
+                                Wenn das Verfahren unerfüllbar ist, kann das Verfahren die leere Klausel ableiten.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div *ngIf="currentContent === 'content3'">
+                    <h3>Voraussetzung</h3>
+                    <p>
+                        Das Resolutionsverfahren setzt die <b>Konjunktive Normalform (KNF)</b> voraus.<br>
+                        Eine <b>KNF</b> ist eine Konjunktion von Disjunktionen von Literalen.<br>
+                        Diese wird der Einfachheit in Mengenschreibweise umgeformt:
+                    </p>
+                    <ul>
+                        <li>Die Konjunktion wird von Klammern <b>'&#123;'</b>,<b>'&#125;'</b> umschlossen.</li>
+                        <li>Die einzelnen Disjunktionen sind in Klammern <b>'&#123;'</b>,<b>'&#125;'</b> eingeschlossen und werden mit Semikolons <b>';'</b> voneinander getrennt.</li>
+                        <li>Die einzelnen Literale werden mit einem Komma <b>','</b> voneinander getrennt.</li>
+                    </ul>
+                </div>
+
+                <div *ngIf="currentContent === 'content4'">
+                    <h3>Regel der Resolution</h3>
+                    <p>
+                        Die Resolutionsregel ist der zentrale Schritt des Verfahrens. Sie beschreibt, wie zwei Klauseln miteinander kombiniert werden, um eine neue Klausel zu erzeugen.<br>
+                        Aus zwei Klauseln, welche ein komplementäres Paar von Literalen enthalten, werden die komplementäre Literale entfernt und die Resolvente gebidet.
+                    </p>
+                    <div class="code-container">
+                        <div id="resolution-rule" class="code-space">
+                            <span class="line"><span class="line-number">1</span>{{ line1 }}</span>
+                            <span class="line"><span class="line-number">2</span>{{ line2 }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="currentContent === 'content5'">
+                    <h3>Vorgehen des Verfahrens</h3>
+                    <ol>
+                        <li>Liegt Formel in KNF vor<br>
+                            Falls die gegebene Formel nicht bereits in KNF vorliegt, wird sie in KNF transformiert.
+                        </li>
+                        <li>Negation des zu beweisenden Satzes hinzufügen:<br>
+                            Wenn gezeigt werden soll, dass eine Aussage S wahr ist, wird deren Negation !S zu F hinzugefügt.<br>
+                            Damit wird geprüft, ob die neue Klauselmenge unerfüllbar ist.
+                        </li>
+                        <li>Resolution anwenden<br>
+                            Wähle zwei Klauseln aus, die ein komplementär enthalten und wende die Resolutionsregel an.<br>
+                            Füge die neue Klausel (Resolvente) der Klausemenge hinzu.
+                        </li>
+                        <li>Leere Klausel prüfen<br>
+                            Wird die leere Klausel erzeugt, ist die ursprüngliche Klauselmenge unerfüllbar.<br>
+                            Ist keine weitere Resolvente ableitbar und es wurde keine leere Klauselmenge erzeugt, ist die ursprüngliche Formel erfüllbar.
+                        </li>
+                    </ol>
+                </div>
+
+                <div *ngIf="currentContent === 'content6'">
+                    <app-resolution-summary></app-resolution-summary>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

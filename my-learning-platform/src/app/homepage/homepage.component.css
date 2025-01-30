@@ -1,0 +1,19 @@
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+    padding-left: 10px;
+}
+
+.flex-item {
+    flex: 1;
+    background-color: lightgreen;
+    border-radius: 10px;
+    border: 1px solid green;
+    min-width: 250px;
+    max-width: 250px;
+    padding: 20px;
+    font-size: 18px;
+}

@@ -1,0 +1,43 @@
+
+<h2>{{ name }}</h2>
+
+<div class="container">
+    <p>Der Tableau-Baum wird nach und nach sequentiell, durch das drücken von "Next" erzeugt.</p>
+
+    <div class="row">
+        <div class="col-xs-12">
+
+            <form (ngSubmit)="onNext()" #f="ngForm">
+                <p>
+                    Weiteres Beispiel:
+                    <a (click)="updateParagraph()">{{ formula2 }}</a>
+                </p>
+
+                <div class="information">
+                    <app-latex-paragraph #latexParagraph [inputString]="formula"></app-latex-paragraph>
+                    <button class="btn btn-success" id="next-button" type="submit" #f="">{{isLast ? 'Rerun' : 'Next'}}</button>
+                </div>
+            
+                <div class="flex-container">
+                    <div class="explanation">
+                        <p id="tableau-example-explanation"></p>
+                    </div>
+                
+                    <div class="tree">
+                        <div id="tableau-tree"></div>
+                    </div>
+                
+                    <div class="rules">
+                        1<app-latex-paragraph [inputString]="rule1"></app-latex-paragraph>
+                        2<app-latex-paragraph [inputString]="rule2"></app-latex-paragraph>
+                        3<app-latex-paragraph [inputString]="rule3"></app-latex-paragraph>
+                        4<app-latex-paragraph [inputString]="rule4"></app-latex-paragraph>
+                        5<app-latex-paragraph [inputString]="rule5"></app-latex-paragraph>
+                        6<app-latex-paragraph [inputString]="rule6"></app-latex-paragraph>
+                        7<app-latex-paragraph [inputString]="rule7"></app-latex-paragraph>
+                    </div>
+                </div> 
+            </form>
+        </div>
+    </div>
+</div>

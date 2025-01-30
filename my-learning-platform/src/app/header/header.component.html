@@ -1,0 +1,21 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" (click)="collapsed = !collapsed">
+                <span class="icon-bar" *ngFor="let iconBar of [1,2,3]"></span>
+            </button>
+            <a routerLink="" class="navbar-brand" id="header-link-home">Homepage</a>
+        </div>
+
+        <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed=true">
+            <ul class="nav navbar-nav">
+                <li class="link-base"><a id="header-link-grundlagen" routerLink="/grundlagen">Grundlagen</a></li>
+
+                <li class="link-theory"><a id="header-link-theory" [routerLink]="getLinkTheory()" [class.disabled]="isLinkDisabled()">{{ textTheory }}</a></li>
+                <li class="link-example"><a id="header-link-example" [routerLink]="getLinkExample()" [class.disabled]="isLinkDisabled()">{{ textExample }}</a></li>
+                <li class="link-test"><a id="header-link-test" [routerLink]="getLinkTest()" [class.disabled]="isLinkDisabled()">{{ textTest }}</a></li>
+                <li class="link-test"><a id="header-link-exercise" [routerLink]="getLinkExercise()" [class.disabled]="isLinkDisabled()">{{ textExercise }}</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>

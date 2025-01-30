@@ -1,0 +1,103 @@
+/* align the container and its elements */
+.container {
+    border: 1px solid grey;
+    padding: 20px;
+    margin-top: 20px;
+    width: auto;
+}
+.flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 10%;
+    /*align-items: center; /*vertical alignment*/
+    justify-content: center; /*horizontal alignment*/
+    border: 1px solid lightblue;
+    min-width: fit-content;
+    justify-content: space-between;
+    padding: 1em;
+}
+
+.graph {
+    border: 1px solid blue;
+    padding: 5px;
+    min-width: 50%;
+    max-width: 500px;
+}
+.graph > .container {
+    min-width: 230px;
+    margin: 0%;
+    padding: 0%;
+    border: none;
+}
+.tree-container {
+    padding: 5px;
+}
+
+app-latex-paragraph {
+    color: black;
+    font-size: 20px;
+}
+
+/* Medienabfrage für kleinere Bildschirme */
+@media (max-width: 600px) {
+    .flex-container {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .flex {
+        flex-direction: column;
+    }
+    .graph {
+        width: 100%;
+    }
+}
+
+.info {
+    position: absolute;
+}
+.root {
+    padding-inline: 1em;
+}
+.center {
+    text-align: center;
+    padding: 0.5em;
+}
+
+span {
+    padding: 0.5em;
+    border: 1px solid black;
+    background-color: yellow;
+    color: blue;
+}
+span.info {
+    padding: auto;
+    border: none;
+    background-color: transparent;
+    color: black;
+    width: 10em;
+}
+.click {
+    background-color: green;
+}
+.click-invalid {
+    background-color: orangered;
+}
+
+.hover-v2 {
+    background-color: aqua;
+}
+.hover > span {
+    background-color: aqua;
+}
+.hover-parent {
+    background-color: lime;
+}
+.hover-invalid {
+    background-color: orangered;
+}
+.content {
+    background-color: aquamarine;
+    border: 1px dashed black;
+    color: violet;
+}

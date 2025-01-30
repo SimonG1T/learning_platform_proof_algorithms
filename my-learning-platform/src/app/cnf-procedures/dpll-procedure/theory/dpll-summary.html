@@ -1,0 +1,53 @@
+<h2>Das DPLL-Verfahren</h2>
+
+<p>
+    Das <b>DPLL-Verfahren</b> ist das wichtigste Verfahren zur Entschedung des allgemeinen Erfüllbarkeitsproblems (SAT-Problem).
+    Es wurde 1961 von Davis Logemann und Loveland eingeführt und ist eine Weiterentwicklung desvon Davis und Putnam entwickelten DP-Verfahren von 1960.
+</p>
+
+<ol class="list-unstyled">
+    <li><h4>Logische Grundlagen</h4>
+        <ul>
+            <li>
+                Klauseln: Eine Klausel ist eine Disjunktion (logisches Oder) von Literalen, wobei ein Literal eine atomare Aussage oder deren Negation ist.
+            </li>
+            <li>
+                Konjunktive Normalform (KNF): Jede logische Formel muss in eine konjunktive Normalform umgewandelt werden, d.h., sie muss als Konjunktion (logisches Und) von Klauseln vorliegen.
+            </li>
+        </ul>
+    </li>
+
+    <li><h4>Reduzierung von Literalen</h4>
+        <p>
+            Aus einer Menge von Klauseln, wird ein Literal ausgewählt.
+            Anschließend werden alle Klauseln gestrichen, welche das Literal enthalten.
+            Aus den übrigen Klauseln, wird das Komplement (die Negation des Literals) gestrichen.
+        </p>
+    </li>
+
+    <li><h4>Verfahren</h4>
+        <ul>
+            <li>
+                Klauselumformung: Die gesamte Formel wird in konjunktive Normalform umgewandelt.
+            </li>
+            <li>
+                Jedes Modell M von F, welches L zu wahr auswertet, ist Modell von F_L.
+                Zu jedem Modell M' von F_L gibt es ein Modell M von F, das Atome in F_L so auwertet wie M': M(L)=1, M wie M' sonst.
+                Also ist F_L erfüllbar, g.d.w. F ein Modell hat, das L zu wahr auswertet.
+            </li>
+        </ul>
+        <ol><b>Schritte</b>
+            <p>
+                Sei F Menge von Klauseln.
+            </p>
+            <li>F=&#123;&#125;: F erfüllbar</li>
+            <li>&#9633; in F: F ist unerfüllbar</li>
+            <li>Einerklausel &#123;L&#125; in F: F erfüllbar gdw. F_L erfüllbar</li>
+            <li>L Literal in F: F erfüllbar gdw. F_L erfüllbar oder F_!L erfüllbar</li>
+        </ol>
+    </li>
+</ol>
+
+<div><a routerLink="/dpll-example">Beispiel für das DPLL-Verfahren</a></div>
+<div><a routerLink="/dpll-test">Test für das Verfahren</a></div>
+<div><a routerLink="/dpll-exercise">Übung zum Verfahren</a></div>

@@ -1,0 +1,90 @@
+<!-- This will show the operator rules for the tableau procedure -->
+<ul>
+    <li><b>Negationsregel</b>
+        <ul>
+            <li>Doppelte Negation:
+                <div class="rule-container">
+                    <div class="rules">
+                        <app-latex-paragraph [inputString]="double_negation"></app-latex-paragraph>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </li>
+
+    <hr>
+
+    <li><b>Alpha-Regeln</b> (Konjunktive Sätze)
+        <ul>
+            <li>Konjunktion:
+                <div class="rule-container">
+                    <div class="rules">
+                        <app-latex-paragraph [inputString]="conjunction"></app-latex-paragraph>
+                    </div>
+                </div>
+            </li>
+
+            <li>Negation einer Disjunktion:
+                <div class="rule-container">
+                    <div class="rules">
+                        <app-latex-paragraph [inputString]="disjunction_negation"></app-latex-paragraph>
+                    </div>
+                </div>
+            </li>
+
+            <li>Negation einer Implikation:
+                <div class="rule-container">
+                    <div class="rules">
+                        <app-latex-paragraph [inputString]="implication_negation"></app-latex-paragraph>
+                    </div>
+                </div>
+            </li>
+
+            <li>Äquivalenz:
+                <div class="rule-container">
+                    <div class="rules">
+                        <app-latex-paragraph [inputString]="equivalenz"></app-latex-paragraph>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </li>
+
+    <hr>
+
+    <li><b>Beta-Regeln</b> (Disjunktive Sätze)
+        <ul>
+            <li>Disjunktion:
+                <div class="rule-container">
+                    <div class="rules">
+                        <app-latex-paragraph [inputString]="disjunction"></app-latex-paragraph>
+                    </div>
+                </div>
+            </li>
+
+            <li>Negation einer Konjunktion:
+                <div class="rule-container">
+                    <div class="rules">
+                        <app-latex-paragraph [inputString]="conjunction_negation"></app-latex-paragraph>
+                    </div>
+                </div>
+            </li>
+
+            <li>Implikation:
+                <div class="rule-container">
+                    <div class="rules">
+                        <app-latex-paragraph [inputString]="implication"></app-latex-paragraph>
+                    </div>
+                </div>
+            </li>
+
+            <li>Negation einer Äquivalenz:
+                <div class="rule-container">
+                    <div class="rules">
+                        <app-latex-paragraph [inputString]="equivalenz_negation"></app-latex-paragraph>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </li>
+</ul>

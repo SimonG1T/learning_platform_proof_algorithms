@@ -1,0 +1,117 @@
+
+<h2>{{ name }}</h2>
+
+<div class="container">
+    <div class="information">
+        <!-- Buttons changes the page content -->
+        <button class="button btn btn-success" type="button" (click)="onSwitch()">{{isLast ? 'Rerun' : 'Next'}}</button>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="dynamic-content">
+                <div *ngIf="currentContent === 'content1'">
+                    <h3>Überblick zum Tableauverfahren</h3>
+                    <p>
+                        Das Tableauverfahren ist ein systematisches Verfahren der formalen Logik, das verwendet wird, um die Erfüllbarkeit oder Gültigkeit einer Aussage zu überprüfen.<br>
+                        Es basiert auf einer Baumstruktur und dient dazu, eine Aussage so weit zu zerlegen, dass überprüft werden kann, ob sie wahr oder falsch ist.<br>
+                        Es wird sowohl in der Aussagen-, als auch in der Prädikatenlogik eingesetzt.
+                    </p>
+                </div>
+
+                <div *ngIf="currentContent === 'content2'">
+                    <h3>Grundidee des Tableauverfahrens</h3>
+                    <p>
+                        Das Tableauverfahren arbeitet mit dem Widerspruchsbeweis:
+                    </p>
+                    <ol>
+                        <li>Es wird die Negation der Aussage !F untersucht.</li>
+                        <li>Der Baum wird systematisch entwickelt, indem die logischen Operatoren der Formel zerlegt werden.</li>
+                        <li>Falls jeder Zweig des Baums zu einem Widerspruch führt, ist die ursprüngliche Aussage F gültig.</li>
+                        <li>Falls ein Zwig widerspruchsfrei bleibt, ist die ursprüngliche Aussage F nicht gültig (die Negation ist erfüllbar.)</li>
+                    </ol>
+                    <p>Das Verfahren ist korrekt und vollständig.</p>
+                    <ul>
+                        <li><b>Korrektheit:</b>
+                            <p>
+                                Wenn das Verfahren zu dem Ergebnis kommt, dass eine Formel unerfüllbar ist (alle Zweige schließen), dann ist die Formel tatsächlich unerfüllbar.<br>
+                                Wenn ein Zweig offen bleibt, bedeutet das, dass die Formel erfüllbar ist. Der offene Zweig liefert dabei eine Interpretation (eine Zuordnung von Wahrheitswerten), unter der die Formel wahr ist.
+                            </p>
+                        </li>
+                        <li><b>Vollständigkeit:</b>
+                            <p>
+                                Es wird garantiert, dass alle möglichen Fälle einer Formel untersucht werden. Das Verfahren erzeugt alle logischen Konsequenzen aus de rgegebenen Formel, bis keine weiteren Ableitungen mehr möglich sind.<br>
+                                Wenn eine Formel unerfüllbar ist, führt das Verfahren sicher zu einem Widerspruch (d.h., alle Zweige schließen).<br>
+                                In der Prädikatenlogik ist das Verfahren vollständig unter der Annahme, dass man die Domäne korrekt behandelt (z.B. durch Einführung neuer Konstantsymbole für existenzquantifizierte Aussagen) und dass keine Begrenung der Ableitungen vorliegt.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+
+                <div *ngIf="currentContent === 'content3'">
+                    <p>
+                        Beim Tableauverfahren kommen verschiedene Regeln zum Einsatz, die dabei helfen, die Formel zu zerlegen um eine Aussage treffen zu können.
+                    </p>
+                    <h3>Regeln logischer Operatioren (Aussagenlogik)</h3>
+                    <app-tableau-rules></app-tableau-rules>
+                </div>
+
+                <div *ngIf="currentContent === 'content4'">
+                    <h3>Regeln für Quantoren (Prädikatenlogik)</h3>
+                    <ul>
+                        <li>Existenzquantor:<br>
+                            Ein Beispiel wird gesucht, welchess A(x) erfüllt.
+                            <div class="rule-container">
+                                <div class="rules">
+                                    <app-latex-paragraph [inputString]="quantor_existenz"></app-latex-paragraph>
+                                </div>
+                            </div>
+                        </li>
+                        <li>Allquantor:<br>
+                            A(x) muss für alle x gelten.<br>
+                            Einführung einer Variablen oder Konstanten
+                            <div class="rule-container">
+                                <div class="rules">
+                                    <app-latex-paragraph [inputString]="quantor_all"></app-latex-paragraph>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div *ngIf="currentContent === 'content5'">
+                    <h3>Vorgehen des Verfahrens</h3>
+                    <ol>
+                        <li>Negation der zu überprüfenden Aussage:<br>
+                            <p>
+                                Wenn gezeigt werden soll, dass eine Aussage S wahr ist, so wird diese in ihrer Negation ins Tableau eingetragen.
+                            </p>
+                        </li>
+                        <li>Schwittweise Zerlegung der Formel:<br>
+                            <p>
+                                Anwenden der einzelnen Regeln um Operatoren aufzulösen und die Formel in ihren Literalen darzustellen.
+                            </p>
+                        </li>
+                        <li>Schließen von Zweigen:<br>
+                            <p>
+                                Ein Zweig wird geschlossen, wenn er einen offensichtlichen Widerspruch enthält.
+                                Der Zweig ist dann nicht erfüllbar.<br>
+                                Lassen sich keine weiteren Regeln mehr anwenden, und ist der Zweig widerspruchsfrei, ist dieser erfüllbar.
+                            </p>
+                        </li>
+                        <li>Erfüllbarkeit prüfen:<br>
+                            <p>
+                                Gibt es einen Zweig, welcher keinen Widerspruch enthält, ist das Tableau erfüllbar, die ursprüngliche Formel ist dann nicht erfüllbar.<br>
+                                Sind alle Zweige abgeschlossen (nicht erfüllbar), ist das Tableau nicht erfüllbar. Die ursprüngliche Formel ist dann erfüllbar.
+                            </p>
+                        </li>
+                    </ol>
+                </div>
+
+                <div *ngIf="currentContent === 'content6'">
+                    <app-tableau-summary></app-tableau-summary>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

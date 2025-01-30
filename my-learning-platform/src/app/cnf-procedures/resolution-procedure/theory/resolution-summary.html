@@ -1,0 +1,48 @@
+<h2>Das Resolutionsverfahren</h2>
+
+<p>
+    Das <b>Resolutionsverfahren</b> ist ein logisches Schlussverfahren, das häufig in der automatischen Theorembeweisung verwendet wird, insbesondere in der Prädikatenlogik erster Stufe. Es basiert auf der Technik der Auflösung (Resolution), die zur Ableitung eines Widerspruchs dient und somit zur Überprüfung der Gültigkeit eines logischen Ausdrucks beiträgt. Das Verfahren wurde von John Alan Robinson in den 1960er Jahren entwickelt.
+</p>
+
+<ol class="list-unstyled">
+    <li><h4>Logische Grundlagen</h4>
+        <ul>
+            <li>
+                Klauseln: Eine Klausel ist eine Disjunktion (logisches Oder) von Literalen, wobei ein Literal eine atomare Aussage oder deren Negation ist.
+            </li>
+            <li>
+                Konjunktive Normalform (KNF): Jede logische Formel muss in eine konjunktive Normalform umgewandelt werden, d.h., sie muss als Konjunktion (logisches Und) von Klauseln vorliegen.
+            </li>
+        </ul>
+    </li>
+    <li><h4>Resolutionsregel</h4>
+        <ul>
+            <li>
+                Die Resolutionsregel besagt, dass aus zwei Klauseln, die ein komplementäres Literal enthalten (ein Literal und dessen Negation), eine neue Klausel abgeleitet werden kann, indem das komplementäre Paar eliminiert wird.
+            </li>
+            <li>
+                Formal: Aus A|L&A|L und B|¬L&B|¬L wird die neue Klausel A|B&A|B gebildet, wobei A|A und B|B jeweils Disjunktionen von Literalen sind und LL ein Literal ist.
+            </li>
+        </ul>
+    </li>
+    <li><h4>Verfahren</h4>
+        <ul>
+            <li>
+                Negation des Beweises: Um zu beweisen, dass eine Aussage C aus einer Menge von Aussagen S folgt (S⊨C), fügt man die Negation der Aussage C zur Menge S hinzu.
+            </li>
+            <li>
+                Klauselumformung: Die gesamte Formel wird in konjunktive Normalform umgewandelt.
+            </li>
+            <li>
+                Iterative Anwendung der Resolutionsregel: Wiederholt wird die Resolutionsregel auf die Klauselmenge angewendet, um neue Klauseln zu erzeugen. Dies wird fortgesetzt, bis entweder die leere Klausel (Widerspruch) erzeugt wird oder keine neuen Klauseln mehr gebildet werden können.
+            </li>
+            <li>
+                Ergebnisinterpretation: Wenn die leere Klausel erzeugt wird, bedeutet dies, dass ein Widerspruch vorliegt, was beweist, dass CC eine logische Konsequenz von S ist. Andernfalls kann nicht geschlossen werden, dass C aus S folgt.
+            </li>
+        </ul>
+    </li>
+</ol>
+
+<div><a routerLink="/resolution-example">Beispiel für das Resolutionsverfahren</a></div>
+<div><a routerLink="/resolution-test">Test für das Verfahren</a></div>
+<div><a routerLink="/resolution-exercise">Übung zum Verfahren</a></div>

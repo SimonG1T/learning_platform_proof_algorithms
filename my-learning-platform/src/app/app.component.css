@@ -1,0 +1,8 @@
+
+.main-container {
+    /* top right bottom left */
+    margin: 1%;
+    padding: 1%;
+    border: 1px solid gray;
+    background-color: rgb(244, 255, 255);
+}
