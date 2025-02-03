@@ -8,12 +8,12 @@ In addition, the platform offers a general theory section for the basics of proo
 The DPLL method was added as an extension.
 
 
-# AngularElectron
+## AngularElectron
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) and [Electron](https://github.com/electron/electron)
 
 
-## Installation
-# Setup Node.js and npm for Ubuntu
+# Installation
+## Setup Node.js and npm for Ubuntu
 ```bash
 sudo apt update
 ```
@@ -33,22 +33,22 @@ sudo apt install npm
 npm -v
 ```
 
-# node_modules
+## node_modules
 ```bash
 npm install
 ```
 
-# Electron
+## Electron
 ```bash
 npm install electron
 ```
 
-## Start the App
+# Start the App
 ```bash
 npm run electron
 ```
 
-## Package Executable for Desktop
+# Package Executable for Desktop
 ```bash
 npm run dist
 ```
