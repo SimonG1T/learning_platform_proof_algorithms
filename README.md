@@ -15,3 +15,7 @@ Sections for each procedure:
  * Exercise: A section with feedback for self learning
 
 Additional there is a general theory section for the reminder of proof algorithms and closing rules.
+
+## About this Repository
+* The my-learning-platform contains the source-code in angular-electron
+* The executables are packaged into zip-files in the download-section
