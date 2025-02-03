@@ -12,9 +12,22 @@ The DPLL method was added as an extension.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) and [Electron](https://github.com/electron/electron)
 
 ## Installation
+# Setup Node.js and npm for Ubuntu
+```bash
+sudo apt update
+sudo apt upgrade
+sudo apt install nodejs
+node -v
+sudo apt install npm
+npm -v
+```
 # node_modules
 ```bash
 npm install
+```
+# Electron
+```bash
+npm install electron
 ```
 
 # Start the App
@@ -25,5 +38,5 @@ npm run electron
 # Package Executable for Desktop
 ```bash
 npm run dist
-electron-packager . --platform=win32
+npx electron-packager . --overwrite
 ```
